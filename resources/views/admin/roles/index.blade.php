@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('title')
-    {{ __('roles') }}
+    {{ __('Roles') }}
 @endsection
 @section('content')
     @php
