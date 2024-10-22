@@ -1,6 +1,6 @@
 @extends('admin.layouts.auth')
 @section("title")
-{{__("messages.login")}}
+{{__("login")}}
 @endsection
 @section("css")
 <style>

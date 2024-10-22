@@ -21,8 +21,8 @@ class Files
     private $class;
     private $get;
     private $type;
-    const IMAGE_PATH = 'assets/images/logo.png';
-    const VIDEO_PATH = 'assets/images/video.mp4';
+    const IMAGE_PATH = '';
+    const VIDEO_PATH = '';
 
     public function __construct($class = "App/Models/File",$get = "get")
     {

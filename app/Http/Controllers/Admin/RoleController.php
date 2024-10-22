@@ -22,6 +22,13 @@ class RoleController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('can:role.create')->only(['create', 'store']);
+        $this->middleware('can:role.edit')->only(['edit', 'update']);
+        $this->middleware('can:role.delete')->only(['destroy']);
+
+    }
     public function index()
     {
         $roles = Role::paginate(15);
@@ -53,7 +60,7 @@ class RoleController extends Controller
             DB::rollBack();
             return back()->with("error",__("Server Error"))->withInput();
         }
-        return redirect(route("dashboard.roles.create"))->with("success",__("messages.done success"));
+        return redirect(route("dashboard.roles.create"))->with("success",__("done success"));
     }
 
     /**
@@ -91,7 +98,7 @@ class RoleController extends Controller
             DB::rollBack();
             return back()->with("error",__("Server Error"))->withInput();
         }
-        return redirect(route("dashboard.roles.index"))->with("success",__("messages.done success"));
+        return redirect(route("dashboard.roles.index"))->with("success",__("done success"));
     }
 
     /**
@@ -101,7 +108,7 @@ class RoleController extends Controller
     {
         $role = Role::findOrFail($id);
         $role->delete();
-        return redirect(route("dashboard.roles.index"))->with("success",__("messages.done success"));
+        return redirect(route("dashboard.roles.index"))->with("success",__("done success"));
     }
 
 

@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('title')
-    {{ __('messages.roles') }}
+    {{ __('roles') }}
 @endsection
 @section('content')
     @php
@@ -14,14 +14,14 @@
     <x-filter>
         <div class="mb-5">
             <label for="f_active"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('messages.Active2') }}
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('Active2') }}
             </label>
             <select id="f_active" name="f_active"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="">-----</option>
-                <option {{ request('f_active') == '1' ? 'selected' : null }} value="1">{{ __('messages.Active') }}
+                <option {{ request('f_active') == '1' ? 'selected' : null }} value="1">{{ __('Active') }}
                 </option>
-                <option {{ request('f_active') == '0' ? 'selected' : null }} value="0">{{ __('messages.UnActive') }}
+                <option {{ request('f_active') == '0' ? 'selected' : null }} value="0">{{ __('UnActive') }}
                 </option>
             </select>
         </div>
@@ -29,12 +29,12 @@
     @php
         $active = '';
         if (request('f_active')) {
-            $active = request('f_active') == '1' ? __('messages.Active') : __('messages.UnActive');
+            $active = request('f_active') == '1' ? __('Active') : __('UnActive');
         }
     @endphp
     <div class="flex gap-2 flex-wrap">
-        <x-alert-text :title="__('messages.keyword')" text="keyword"></x-alert-text>
-        <x-alert-select :titleLabel="__('messages.Active')" :title="$active" text="f_active"></x-alert-select>
+        <x-alert-text :title="__('keyword')" text="keyword"></x-alert-text>
+        <x-alert-select :titleLabel="__('Active')" :title="$active" text="f_active"></x-alert-select>
 
     </div>
     <div class="text-left">
@@ -47,7 +47,7 @@
                     d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
                     clip-rule="evenodd"></path>
             </svg>
-            {{ __('Add Admin') }}
+            {{ __('Add Role') }}
         </a>
     </div>
 

@@ -42,7 +42,7 @@ return [
             ]
         ],
         [
-            "title"     => "Customers",
+            "title"     => "Invoices",
             "icon"      => 'user-gray.svg',
             "icon_active" => 'user-white.svg',
             "data"      => [
@@ -62,20 +62,20 @@ return [
                     "title"         => "Remove Customer",
                     "name"          => "customer.delete",
                 ],                [
-                    "title"         => "Create Provider",
-                    "name"          => "provider.create",
+                    "title"         => "Create Invoice",
+                    "name"          => "invoice.create",
                 ],
                 [
-                    "title"         => "Show Provider",
-                    "name"          => "provider.show",
+                    "title"         => "Show Invoice",
+                    "name"          => "invoice.show",
                 ],
                 [
-                    "title"         => "Edit Provider",
-                    "name"          => "provider.edit",
+                    "title"         => "Edit Invoice",
+                    "name"          => "invoice.edit",
                 ],
                 [
-                    "title"         => "Remove Provider",
-                    "name"          => "provider.delete",
+                    "title"         => "Remove Invoice",
+                    "name"          => "invoice.delete",
                 ]
 
             ]

@@ -1,6 +1,6 @@
 <div class="mb-5">
     <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-        {{__("messages.Country")}}</label>
+        {{__("Country")}}</label>
     <select class="select2 "
      name="country_code">
         <option value="">-----</option>

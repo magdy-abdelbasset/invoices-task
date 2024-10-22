@@ -76,7 +76,7 @@ function deleteFile($model,$type="image")
 function sendJson($data, $message = null, $status = 200 ,$success = true)
 {
     if($message == null){
-        $message = __("messages.done success");
+        $message = __("done success");
     }
     return response()->json([
         "success"   => $success,

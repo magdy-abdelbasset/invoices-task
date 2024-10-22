@@ -4,10 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\AdminRequest;
-use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use App\Models\Admin;
 use Exception;
 use Illuminate\Support\Facades\DB;
@@ -16,10 +13,18 @@ use Spatie\Permission\Models\Role;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:admin.create')->only(['create', 'store']);
+        $this->middleware('can:admin.edit')->only(['edit', 'update']);
+        $this->middleware('can:admin.delete')->only(['destroy']);
+
+    }
     public function home()
     {
         $data = [];
-        return view("admin.home.home", compact("data"));
+                return redirect(route("dashboard.admins.index"))->with("success",__("done success"));
+
     }
     
     /**
@@ -27,7 +32,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $admins = Admin::paginate(15);
+        $admins = Admin::query();
+        $this->filterData($admins);
+        $admins = $admins->paginate();
         return view('admin.admins.index', compact("admins"));
     }
 
@@ -59,7 +66,7 @@ class AdminController extends Controller
             // dd($e);
             return back()->with("error",__("Server Error"))->withInput();
         }
-        return redirect(route("dashboard.admins.create"))->with("success",__("messages.done success"));
+        return redirect(route("dashboard.admins.create"))->with("success",__("done success"));
     }
 
     /**
@@ -98,7 +105,7 @@ class AdminController extends Controller
             DB::rollBack();
             return back()->with("error",__("Server Error"))->withInput();
         }
-        return redirect(route("dashboard.admins.index"))->with("success",__("messages.done success"));
+        return redirect(route("dashboard.admins.index"))->with("success",__("done success"));
     }
 
     /**
@@ -109,7 +116,7 @@ class AdminController extends Controller
         //
         $admin = Admin::findOrFail($id);
         $admin->delete();
-        return back()->with("success",__("messages.done success"));
+        return back()->with("success",__("done success"));
     }
     
     public function active($id)
@@ -118,7 +125,7 @@ class AdminController extends Controller
         $admin->update([
             "active"    => 1
         ]);
-        return back()->with("success",__("messages.done success"));
+        return back()->with("success",__("done success"));
     }
     public function unactive($id)
     {
@@ -126,7 +133,16 @@ class AdminController extends Controller
         $admin->update([
             "active"    => 0
         ]);
-        return back()->with("success",__("messages.done success"));
+        return back()->with("success",__("done success"));
 
+    }
+    private function filterData(&$data)
+    {
+        if (request("keyword")) {
+            $data->where(function ($q) {
+                $q->where("email", 'like', '%' . request("keyword") . '%')
+                    ->orWhere("name", 'like', '%' . request("keyword") . '%');
+            });
+        }
     }
 }

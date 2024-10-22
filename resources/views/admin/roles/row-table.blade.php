@@ -14,7 +14,7 @@
                  type="button">
                 <img src="{{ asset('assets/images/sign-document-icon.svg') }}" alt="" srcset="">
             </a>
-            <a href="#" title="{{ __('messages.action delete role') }}"
+            <a href="#" title="{{ __('action delete role') }}"
                 data-action="{{ route('dashboard.roles.destroy', $role->id) }}"
                 data-method="DELETE"
                 data-modal-target="popup-modal" data-modal-toggle="popup-modal"

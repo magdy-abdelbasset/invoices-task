@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"
+[
+ <!ATTLIST svg
+  xmlns:xlink CDATA #FIXED "http://www.w3.org/1999/xlink">
+]>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="128pt" height="128pt" viewBox="0 0 507.946 507.946">
+  <defs>
+    <radialGradient id="a" cx="218.9404" cy="219.7715" r="150.7063" stroke="#000" stroke-opacity=".986014" stroke-width=".981612" fx="218.9404" fy="219.7715" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73ffff"/>
+      <stop offset=".2809" stop-color="#2ea6b9"/>
+      <stop offset="1" stop-color="#006b8b"/>
+    </radialGradient>
+    <radialGradient xlink:href="#a" id="b" cx="0" cy="0" r=".766358" fx="0" fy="0" gradientTransform="matrix(.92068 -.02858 .03362 1.08511 .373436 .384854)" gradientUnits="objectBoundingBox" spreadMethod="pad"/>
+  </defs>
+  <path fill="#a4c9ee" fill-opacity=".7" d="M23.92133827 256.46367136c0 127.62899404 102.90068278 231.4720544 229.38221929 231.4720544 126.47774629 0 229.38221929-103.84306036 229.38221929-231.4720544 0-127.63281876-102.904473-231.47014204-229.38221929-231.47014204-126.48153651 0-229.38221929 103.83732328-229.38221929 231.47014204z" font-size="12"/>
+  <path fill="url(#b)" stroke="#1c6772" stroke-opacity=".988235" stroke-width="3.86972" d="m246.07 280.233-81.261 3.098c-13.608.086-19.587-15.237-19.309-25.519-.646-8.205 3.352-25.67 18.929-26.818l79.787-1.983-2.263-75.59c-.157-15.132 15.722-24.711 25.451-23.814 10.881-.951 23.304 8.318 24.284 20.626l1.481 79.25 79.851-1.814c13.162-1.04 22.012 11.546 22.04 22.156.028 10.881-.279 24.977-19.688 25.344l-79.444 1.887 2.211 83.505c.086 10.837-13.035 18.623-21.469 18.345-8.205.646-27.98-1.966-29.128-17.543l-1.472-81.13z" font-size="12" opacity=".7" transform="matrix(1.2536 .03888 -.03888 1.2536 -66.3537 -65.4059)"/>
+</svg>

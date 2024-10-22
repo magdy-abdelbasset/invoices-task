@@ -20,7 +20,17 @@ class CreateInvoicesTable extends Migration
             $table->date('due_date')->nullable();
             $table->longText('items');
             $table->float("total_amount");
+            $table->unsignedBigInteger("client_id");
             $table->timestamps();
+
+
+            $table->index('client_id');
+            
+            $table->foreign('client_id')
+            ->references('id')
+            ->on('clients')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 

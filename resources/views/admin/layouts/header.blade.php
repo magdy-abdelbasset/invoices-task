@@ -9,7 +9,6 @@
             </div>
             <a class="logo" href="{{ route('dashboard.home') }}">
 
-                <img class="logo-img" src="{{ asset('assets/images/logo-vertical.png') }}" alt="" srcset="">
             </a>
         </div>
         <div class="p-1 flex flex-row items-center">

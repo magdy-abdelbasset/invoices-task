@@ -72,7 +72,7 @@
             </ul>
         </li>
         @endcanany
-        @canany([ 'user.show', 'provider.show'])
+        @canany([ 'customer.show', 'invoice.show'])
             
         
         <li class="h-full py-3 px-2 border-b border-light-border" aria-controls="dropdown-users"
@@ -84,7 +84,7 @@
                     class="flex grow items-center gap-2 transition ease-in-out delay-150 {{ in_array('customers', $req_segments) || in_array('invoices', $req_segments) ? '-translate-y-1 scale-110 text-[#52bcdc]' :'hover:-translate-y-1 hover:scale-110' }} duration-300">
                     <object data="{{ asset('assets/images/icons/user.svg') }}" type="image/svg+xml"
                         width="20" height="100%"></object>
-                    <span class="grow">{{ __('Users') }}</span>
+                    <span class="grow">{{ __('Customers') }}</span>
                 </span>
                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 10 6">
@@ -108,7 +108,7 @@
                     </a>
                 </li>
                 @endcan
-                @can('provider.show')
+                @can('invoice.show')
                 <li class="w-full h-full py-3 px-2">
                     <a href="{{ route('dashboard.invoices.index') }}"
                         class="flex items-center justify-between w-full font-normal font-light text-sm text-nav-item no-underline">

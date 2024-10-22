@@ -4,9 +4,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\AdminFcm;
@@ -41,16 +39,5 @@ class AuthController extends Controller
         Auth::logout();
         return redirect(route("dashboard.login"));
     }
-    public function fcm(Request $request)
-    {
-        if (!empty($request->fcm_token) && auth()->user()) {
-            $fcm = AdminFcm::firstOrNew([
-                "admin_id"   => auth()->id(),
-                "fcm_token" => $request->fcm_token,
-            ]);
-            $fcm->fcm_token = $request->fcm_token;
-            $fcm->admin_id =  auth()->id();
-            $fcm->save();
-        }
-    }
+
 }

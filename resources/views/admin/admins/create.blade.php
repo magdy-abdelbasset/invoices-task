@@ -93,7 +93,7 @@
 
             <div class="mb-5">
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image">
-                    {{ __('messages.upload Image') }}
+                    {{ __('upload Image') }}
                 </label>
                 <input accept="image/png,image/jpg,image/jpeg"
                     class="block w-full text-sm text-gray-900 p-2 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
@@ -112,7 +112,7 @@
                             class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
                         </div>
                         <span
-                            class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">{{ __('messages.Active') }}</span>
+                            class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">{{ __('Active') }}</span>
                     </label>
                 </div>
             </div>
@@ -133,7 +133,7 @@
             </div>
             <button type="submit"
                 class="w-5/12 bolder justify-center flex items-center  bg-gray-200 hover:bg-gray-500 text-gray-900 font-bold font-bold py-4 m-auto px-6 rounded-full">
-                {{ __('messages.save') }} <svg class="w-3.5 h-3.5 me-1 ms-1" aria-hidden="true"
+                {{ __('save') }} <svg class="w-3.5 h-3.5 me-1 ms-1" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path
                         d="M18 2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2ZM2 18V7h6.7l.4-.409A4.309 4.309 0 0 1 15.753 7H18v11H2Z" />

@@ -26,12 +26,8 @@ Route::group(['prefix' => 'dashboard',"as"=>"dashboard."], function ($router) {
 
         Route::resource('/roles', RoleController::class)->except("show");
         Route::resource('/customers', CustomerController::class);
-        Route::post('/customers/{id}/active', [CustomerController::class,'active'])->name('customers.active');
-        Route::post('/customers/{id}/unactive', [CustomerController::class,'unactive'])->name('customers.unactive');
 
         Route::resource('/invoices', InvoiceController::class);
-        Route::post('/invoices/{id}/active', [InvoiceController::class,'active'])->name('invoices.active');
-        Route::post('/invoices/{id}/unactive', [InvoiceController::class,'unactive'])->name('invoices.unactive');
     });
 });
 

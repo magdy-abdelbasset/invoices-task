@@ -16,7 +16,7 @@ class Client extends Model
      *
      * @var array
      */
-    protected $guarde = [
+    protected $guarded = [
         'id'
     ];
 }
